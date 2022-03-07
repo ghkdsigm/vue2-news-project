@@ -11,7 +11,7 @@ export default {
         ListItem
     },    
     mixins:[ListMixin],
-}
+  } 
 </script>
 
 <style scoped>

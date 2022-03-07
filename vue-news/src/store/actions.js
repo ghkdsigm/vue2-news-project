@@ -1,7 +1,7 @@
 import { fetchNewsList,fetchAskList,fetchJobsList,fetchUserInfo, fetchItemInfo, fetchList} from '../api/index.js'
 export default{
     FETCH_NEWS(context){
-        fetchNewsList()
+        return fetchNewsList()
         .then(res => {
             context.commit('SET_NEWS', res.data);
             return res;
@@ -11,7 +11,7 @@ export default{
         })
     },
     FETCH_ASK(context){
-        fetchAskList()
+        return fetchAskList()
         .then(res=>{
             context.commit('SET_ASK',res.data)
         })
@@ -20,7 +20,7 @@ export default{
         })
     },
     FETCH_JOBS(context){
-        fetchJobsList()
+        return fetchJobsList()
         .then(res=>{
             context.commit('SET_JOBS',res.data)
         })
@@ -29,7 +29,7 @@ export default{
         })
     },        
     FETCH_USER({commit}, name){
-        fetchUserInfo(name)
+        return fetchUserInfo(name)
         .then(({data}) => {
             commit('SET_USER', data)
         })
@@ -38,7 +38,7 @@ export default{
         })
     },
     FETCH_ITEM({commit}, id){
-        fetchItemInfo(id)
+        return fetchItemInfo(id)
         .then(({data}) => {
             commit('SET_ITEM', data)
         })
@@ -47,7 +47,7 @@ export default{
         })
     },
     FETCH_LIST({commit}, pageName){
-        fetchList(pageName)
+        return fetchList(pageName)
         .then(({data})=> commit('SET_LIST', data))
         .catch(error => console.log(error))
     }
