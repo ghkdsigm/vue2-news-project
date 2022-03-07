@@ -34,32 +34,33 @@
 <script>
 // import { mapState } from 'vuex'
 export default {    
-    created(){
-        const name = this.$route.name;
-        const dispatch = this.$store.dispatch;        
-        if(name === 'news'){
-            dispatch('FETCH_NEWS')
-        }
-        else if(name === 'ask'){
-            dispatch('FETCH_ASK')
-        }
-        else if(name === 'jobs'){
-            dispatch('FETCH_JOBS')
-        }
-    },
+    // created(){
+    //     const name = this.$route.name;
+    //     const dispatch = this.$store.dispatch;        
+    //     if(name === 'news'){
+    //         dispatch('FETCH_NEWS')
+    //     }
+    //     else if(name === 'ask'){
+    //         dispatch('FETCH_ASK')
+    //     }
+    //     else if(name === 'jobs'){
+    //         dispatch('FETCH_JOBS')
+    //     }
+    // },
     computed:{
         listItems(){
-            const name = this.$route.name;
-            const store = this.$store.state;
-            if(name === 'news'){
-                return store.news;
-            }
-            else if(name === 'ask'){
-                return store.ask;
-            }
-            else if(name === 'jobs'){
-                return store.jobs;
-            }
+            return this.$store.state.list;
+            // const name = this.$route.name;
+            // const store = this.$store.state;
+            // if(name === 'news'){
+            //     return store.news;
+            // }
+            // else if(name === 'ask'){
+            //     return store.ask;
+            // }
+            // else if(name === 'jobs'){
+            //     return store.jobs;
+            // }
         }
     }
 }

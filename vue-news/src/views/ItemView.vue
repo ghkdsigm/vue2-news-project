@@ -2,8 +2,9 @@
   <div>      
       <section>
           <UserProfile :info="fetchedItem" >
-              <template v-slot:username>{{ fetchedItem.user }}</template>
-              <template v-slot:time>{{ fetchedItem.time_ago }}</template>
+              <!-- <template v-slot:username>{{ fetchedItem.user }}</template> -->
+              <router-link slot="username" :to="`/user/${fetchedItem.user}`">{{ fetchedItem.user }}</router-link>
+              <template slot="time">{{ 'Posted ' + fetchedItem.time_ago }}</template>
           </UserProfile>
       </section>
       <section>

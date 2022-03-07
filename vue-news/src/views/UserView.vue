@@ -1,8 +1,12 @@
 <template>
   <div>
         <user-profile :info="userInfo" >
-            <template v-slot:username>{{ userInfo.id }}</template>
-            <template v-slot:time>{{ userInfo.created }}</template>
+            <!-- <template  slot="username">{{ userInfo.id }}</template> -->
+            <!-- <router-link slot="username" :to="`/user/${userInfo.id}`">{{ userInfo.id }}</router-link>
+            <template  slot="time">{{ userInfo.created }}</template> -->
+            <div slot="username">{{ userInfo.id }}</div>
+            <span slot="time">{{ 'Joind ' + userInfo.created }}, </span>
+            <span slot="karma">{{ userInfo.karma }}</span>
         </user-profile>
   </div>
 </template>

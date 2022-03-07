@@ -30,10 +30,15 @@ const config = {
     return axios.get(url);
   }
 
+  function fetchList(pageName) {
+    return axios.get(`${config.baseUrl}${pageName}/1.json`);
+  }
+
 export {
     fetchNewsList,
     fetchAskList,
     fetchJobsList,
     fetchUserInfo,
-    fetchItemInfo
+    fetchItemInfo,
+    fetchList
 }

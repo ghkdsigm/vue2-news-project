@@ -9,6 +9,8 @@
             <div class="time">
                 <slot name="time">
                 </slot>
+                <slot name="karma">
+                </slot>
             </div>
         </div>
     </div>  
