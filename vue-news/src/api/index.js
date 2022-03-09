@@ -9,7 +9,12 @@ const config = {
   
   //2. API 함수 정리
   function fetchNewsList() {
-    return axios.get(`${config.baseUrl}news/1.json`);
+    try {
+      const res = axios.get(`${config.baseUrl}news/1.json`);
+      return res
+    } catch (error) {
+      console.log(error)
+    }
   }
   
   function fetchAskList() {
@@ -29,9 +34,15 @@ const config = {
     const url = `${config.item}${id}.json`;
     return axios.get(url);
   }
-
+  
+  //try catch문
   function fetchList(pageName) {
-    return axios.get(`${config.baseUrl}${pageName}/1.json`);
+    try {
+      const res =  axios.get(`${config.baseUrl}${pageName}/1.json`);
+      return res
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 export {

@@ -22,19 +22,19 @@
     <button type="button" @click="tbShow">나타내기</button>
     <button type="button" @click="countUp">{{number}}</button>
 
-     <TestContents :title="women + man"></TestContents>
+    <test-contents v-model="checked"></test-contents>
   </div>
 </template>
 
 <script>
-import TestContents from '../components/TestContents';
+import TestContents from '../components/TestContents.vue';
 export default {  
   components:{
     TestContents
   },
   data(){
     return {
-      title:'승현이의연습장',
+      //title:'승현이의연습장',
       input1:'',
       users:[1,2,3,4,5,6],
       options:[
@@ -44,9 +44,10 @@ export default {
       ],
       tableShow:false,
       number:0,
-      sex:this.title,
+      //sex:this.title,
       women:'females',
-      man:'male'
+      man:'male',
+      checked:false,
     }
   },
   methods:{
